@@ -1,0 +1,19 @@
+{
+  "name": "manager",
+  "version": "1.0.0",
+  "description": "Manager is a Password Manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "keywords": ["Password Manager", "Manager"],
+  "author": "Metabeast",
+  "license": "ISC",
+  "dependencies": {
+    "discord-rpc": "^4.0.1",
+    "electron": "^21.2.2",
+    "fs": "^0.0.1-security",
+    "os": "^0.1.2"
+  }
+}

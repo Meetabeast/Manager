@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="settings">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+                <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+            </svg>
+        </div>
+    </div>
+    <div class="sidebar">
+        <span class="sidebar-title">Manager</span>
+        <div class="sidebar-container">
+            <a id="index" class="active">
+                <span>Dashboard</span>
+            </a>
+            <a id="passwords">
+                <span>Password Generator</span>
+            </a>
+            <a id="names">
+                <span>Name Generator</span>
+            </a>
+            <a id="settingss">
+                <span>Settings</span>
+            </a>
+        </div>
+    </div>
+
+    <div id="dashboard" class="activePage">
+        <div class="wrapper">
+            <h1 class="subtitle">Passwords</h1>
+            <hr>
+            <div class="password-container">
+                <div class="passwords" id="psws">
+                    
+                </div>
+            </div>
+            <div class="name-container">
+                <h1 class="subtitle">Names</h1>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <div id="password">
+        <div class="wrapper">
+            <div class="password-card">
+                <h3 class="title">Create Password</h3>
+                <p class="description">
+                    Passwords are probably the most important thing your account has, so create a secure password here
+                </p>
+    
+                <div>
+                    <h4>Enter a Name:</h4>
+                    <input type="text" id="passwordName" class="input-field" placeholder="My cool Password" style="margin-top: 5px; margin-bottom: 10px; width: 300px;" required>
+                </div>
+    
+                <h4 style="margin-bottom: 4px; margin-top: 6px;">Options:</h4>
+                <div class="controls">
+                    <div class="control">
+                        <div class="control-container">
+                            <label for="passswordLength">Password Length</label>
+                            <input type="number" id="passwordLength" value="15" min="2" max="100" class="passwordLength">
+                        </div>
+                    </div>
+                    <div class="control">
+                        <div class="control-container">
+                            <label for="uppercase">Uppercase Letters</label>
+                            <label class="switch">
+                                <input type="checkbox" id="uppercase" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="control">
+                        <div class="control-container">
+                            <label for="lowercase">Lowercase Letters</label>
+                            <label class="switch">
+                                <input type="checkbox" id="lowercase" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="control">
+                        <div class="control-container">
+                            <label for="numbers">Numbers</label>
+                            <label class="switch">
+                                <input type="checkbox" id="number" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="control">
+                        <div class="control-container">
+                            <label for="symbol" class="control-text">Symbols</label>
+                            <label class="switch">
+                                <input type="checkbox" id="symbol" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <h4>Result:</h4>
+                <div class="password">
+                    <span id="passwordSpan">Nothing :)</span>
+                </div>
+                <div class="footer">
+                    <div class="footer-container">
+                        <button id="reload" class="button orange">Reload</button>
+                        <button id="save" class="button green">Save</button>
+                    </div>
+                </div>
+            </div>
+    
+            
+            <br>
+            <br>
+            <div class="password-card">
+                <h3 class="title">Import Password</h3>
+                <p class="description">Already have a password that you want to import? Then you can do this here</p>
+
+                <div>
+                    <h4>Enter a Name:</h4>
+                    <input type="text" id="existName" class="input-field" placeholder="My cool Password" style="margin-top: 5px; margin-bottom: 10px; width: 300px;" required>
+                </div>
+                <div style="margin-top: 30px;">
+                    <h4>Enter the password</h4>
+                    <input type="text" id="existPassword" class="input-field" placeholder="Enter your exist Password" style="margin-top: 5px; margin-bottom: 10px; width: 300px;" required>
+                </div>
+
+                <div class="footer">
+                    <div class="footer-container">
+                        <button id="existsave" class="button green">Save</button>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="password-card">
+                <h3 class="title">Manage Passwords</h3>
+                <p class="description">Here you can control all your passwords</p>
+
+                <div class="manage-passwords" id="manage-passwords">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="name">
+        <div class="wrapper">
+            <div class="name-card">
+                <h3 class="title">Names</h3>
+                <p class="description">Here you can get a random name that you can use over all</p>
+
+                <div style="text-align: center; padding-bottom: 50px;">
+                    <h1>Coming Soon!</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="settings">
+        <div class="wrapper">
+            <h2 class="setting-title" style="color: rgb(255, 255, 255)">Settings<hr></h2>
+            <div class="settings-container">
+                <span class="setting-title">General
+                <hr>
+                </span>
+                <div class="setting">
+                    <span>Discord RPC</span>
+                    <label class="setting-switch">
+                        <input type="checkbox" id="rpc">
+                        <span class="setting-slider round"></span>
+                    </label>
+                </div>
+                <div class="setting">
+                    <span>Auto Start</span>
+                    <label class="setting-switch">
+                        <input type="checkbox" id="start">
+                        <span class="setting-slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast">
+        <div class="toast-content">
+            <div class="message">
+                <span class="text text-1" id="text-1"></span>
+                <span class="text text-2" id="text-2"></span>
+            </div>
+        </div>
+        <span class="close">&#10006;</span>
+        <div class="progress"></div>
+    </div>
+</body>
+</html>
