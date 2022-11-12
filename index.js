@@ -87,6 +87,10 @@ if(settings.autoStart == true) {
         openAtLogin: true,
         path: app.getPath("exe")
     });
+} else {
+    app.setLoginItemSettings({
+        openAtLogin: false
+    })
 }
 
 app.whenReady().then(() => {
