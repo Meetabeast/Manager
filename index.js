@@ -37,7 +37,7 @@ app.on("ready", () => {
         useContentSize: true,
         autoHideMenuBar: true,
         webPreferences: {
-            devTools: true,
+            devTools: false,
             preload: path.join(__dirname, "preload.js"),
             nodeIntegration: true
         },
